@@ -24,6 +24,7 @@ com_ami<-function(graph,x,y){
 }
 com_ami(amired,"ABRAHAM","MIGUEL")
 
+#trayectoria más larga función
 longest_path()
 
 
