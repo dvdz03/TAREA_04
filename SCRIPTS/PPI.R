@@ -24,5 +24,7 @@ mean(distances(levadura))
 is_connected(levadura)
 mean(distances(levadura)[distances(levadura)!=Inf])
 
-transitivity(levadura)
-mean(transitivity(levadura))
+transitivity(levadura)#este es el global, por lo que es el mismo que el proemdio
+transitivity(levadura,type="local")
+#si tiene proteínas con 1 
+
