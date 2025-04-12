@@ -31,7 +31,7 @@ mean(distmat)
 #diámetro
 diam<-diameter(karate)
 diam
-#trayectoria del os nodos más alejados
+#trayectoria de los nodos más alejados
 alejados<-get_diameter(karate)
 alejados
 #coeficientes de clusterización
