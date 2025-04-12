@@ -24,6 +24,7 @@ com_ami<-function(graph,x,y){
 }
 com_ami(amired,"ABRAHAM","MIGUEL")
 
+transitivity(amired, type="local")
 
-
+head(sort(degree(amired),decreasing=TRUE),2)
 

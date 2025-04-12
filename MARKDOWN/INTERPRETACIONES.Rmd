@@ -1,0 +1,60 @@
+---
+title: "Interpretaciones de los ejercicio y preguntas"
+author: "David Flores"
+date: "2025-04-12"
+output: html_document
+---
+
+```{r}
+library(igraph)
+```
+
+
+## Preguntas
+
+1.- **Considera una red de 15 nodos . Considera que tienes una sola conexión. ¿Cuál es el número máximo de nodos que puedes conectar? Dado un solo nodo , ¿cuál es el número máximo conexiones que puede tener tal nodo?**
+
+Al tener una red de 15 nodos y solo tener una conexión en esta red imaginaria, el número máximo de nodos que se pueden conectar es 1, el número máximo de conexiones que puede tener cada nodo es 14, eso teniendo en cuenta que los nodos no tengan una conexión consigo mismos.
+
+2.-**Considera una red dirigida de 10 nodos. Usa 25 conexiones y dibuja una red con ese número de nodos y conexiones dirigidas. Calcula la distribución de conectividades de salida.Calcula el número total de conexiones de salida ¿Cómo se compara el número total de de conectividades de entrada (son iguales, diferentes)? Explica tu respuesta. Calcula el promedio de entrada y de salida. Discute tu resultado.**
+
+
+3.-**Considera una red no dirigida de n = 3, 4, 5, 6 nodos respectivamente. ¿Cuál es el número máximo de conexiones que puedes poner? Dibuja cada caso. ¿Qué pasa si la red es dirigida?**
+```{r}
+r1<-make_empty_graph(n=3)
+r1<-add_edges(r1,c(1,2, 2,3))
+r2<-make_empty_graph(n=4)
+r2<-add_edges(r2, c(1,2, 2,3, 3,4))
+r3<-make_empty_graph(n=5)
+r3<-add_edges(r3,c(1,2, 2,3, 3,4, 4,5))
+r4<-make_empty_graph(n=6)
+r4<-add_edges(r4,c(1,2, 2,3, 3,4, 4,5, 5,6))
+
+maximo<-vcount(r4)*(vcount(r4)-1)/2
+maximo
+
+maximo1<-vcount(r3)*(vcount(r3)-1)/2
+maximo1
+
+maximo2<-vcount(r2)*(vcount(r2)-1)/2
+maximo2
+
+maximo3<-vcount(r1)*(vcount(r1)-1)/2
+maximo3
+```
+
+4.- **Considera tu red de amigos reales.¿ Cuál es tu coeficiente de clusterización?**
+
+Mi coeficiente de clusterización es de ***0.3455992***, esto tiene sentido porque yo puse a 16 personas que eran mis amigos, sin embargo, de estas 16 personas que yo puse como mis amigos, no todos son amigos entre sí, es por eso que el valor de transitividad sale tan bajo en comparación a otros nodos 
+
+
+### KARATE
+
+Esta red cuenta con **34 nodos y 78 conexiones**, me confundí y pensé que tenía 156 conexiones, pero eso fue porque al principio utilicé la suma del degree de todos los nodos, por lo que con eso repetía las conexiones de lo nodos, l oque elevaba el valor real de las conexiones.
+
+La red es poco densa, tiene un valor de densidad de ***0.139*** y se trata de una red no digirida y no pesada. 
+
+Al obtener el coeficiente de clusterización si hay nodos que tienen un valor igual a 1, esto indica que todos los vecinos de esos nodos, son vecinos entre sí o más bien tienen conexiones entre sí, de igual forma había un nodo con un valor NaN, al momento de calcular el coeficiente, esto se debe a que este nodo solo cuenta con una conexión, entonces solo tiene 1 vecino en total, lo que dificulta el cálculo porque su único vecino no puede tener conexiones con otro. 
+
+### AMIGOS
+
