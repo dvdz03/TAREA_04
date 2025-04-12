@@ -38,3 +38,4 @@ alejados
 transitivity(karate)
 transitivity(karate, type="local")#si sirve
 
+
